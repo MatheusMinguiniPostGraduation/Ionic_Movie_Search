@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <p color="detail">Infome os filtros</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form>
+      <div>
+        <ion-item>
+          <ion-label id="movie_title" color="twitterDarkBlue" floating>Título do filme</ion-label>
+          <ion-input name="movie_title" [(ngModel)]="filme.title" maxlength="20" clearInput></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label id="movie_id" color="twitterDarkBlue" floating>ID do filme</ion-label>
+          <ion-input name="movie_id" [(ngModel)]="filme.imdbID" maxlength="20" clearInput></ion-input>
+        </ion-item>
+
+        <ion-row>
+          <ion-col text-center>
+            <button [color]="myColor" [round]="true" (click)="pesquisar()" ion-button small>
+              Buscar Filme
+            </button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!retornouFilme">
+          <ion-col text-center>
+            <h6 color="twitterDarkBlue">Lembre-se: Apenas um dos dados é obrigatório!</h6>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div *ngIf="retornouFilme">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Informações do filme (Em Inglês)</ion-card-title>
+                <img [src]="filmeEncontrado.Poster">
+            </ion-card-header>
+            <ion-card-content>
+              <h2 color="twitterDarkBlue">{{filmeEncontrado.Title}}</h2>
+              <p><b>Year:</b> {{filmeEncontrado.Released}}</p>
+              <p><b>Genre:</b> {{filmeEncontrado.Genre}}</p>
+              <p><b>Awards:</b> {{filmeEncontrado.Awards}}</p>
+            </ion-card-content>
+          </ion-card>
+        <button [color]="myColor" [round]="isRound" (click)="detalhar()" ion-button block >
+            Detalhar: {{filmeEncontrado.Title}}
+        </button>
+      </div>
+    </form>
+</ion-content>

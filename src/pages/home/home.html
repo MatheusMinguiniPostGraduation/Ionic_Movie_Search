@@ -1,0 +1,29 @@
+  <ion-header>
+    <ion-navbar>
+        <ion-title>
+        <p color="detail">Busca Filmes</p>
+        </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Os melhores filmes aqui!</ion-card-title>
+        <div class="fundoInicial">
+           <img src="assets/imgs/fundo.jpg"/>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        Aplicativo de busca de filmes, ao pesquisar algum filme,
+        tentaremos lhe retornar todos os detalhes do mesmo, clique no icone de pesquisa para começar.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab right bottom>
+      <button ion-fab color="search-buttom" (click)="pesquisar()">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-fab>
+
+  </ion-content>

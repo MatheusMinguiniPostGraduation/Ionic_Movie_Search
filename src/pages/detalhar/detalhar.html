@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <p color="detail">{{filmeEncontrado.Title}}</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Plot
+         <ion-icon ios="ios-information-circle" md="md-information-circle"  item-start></ion-icon>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h5 color="dark-grey">
+        {{filmeEncontrado.Plot}}
+      </h5>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+      <ion-item-divider>
+        <ion-card-header>
+          <h5 color="twitterDarkBlue"><b>INFORMAÇÕES</b></h5>
+        </ion-card-header>
+      </ion-item-divider>
+        <ion-row>
+          <ion-col text-center>
+            <h5 color="dark-grey"><b>Language:</b> {{filmeEncontrado.Language}}</h5>
+            <h5 color="dark-grey"><b>Awards:</b>{{filmeEncontrado.Language}}</h5>
+            <h5 color="dark-grey"><b>Imdb ID:</b> {{filmeEncontrado.imdbID}}</h5>
+            <h5 color="dark-grey"><b>Writer:</b> {{filmeEncontrado.Writer}}</h5>
+            <h5 color="dark-grey"><b>Type:</b> {{filmeEncontrado.Type}}</h5>
+            <h5 color="dark-grey"><b>Released:</b> {{filmeEncontrado.Released | date:"dd/MM/yyyy"}}</h5>
+          </ion-col>
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
